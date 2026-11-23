@@ -8,5 +8,3 @@ def is_close_to_zero(a, tolerance=1e-10):
 
 def is_close_to_one(a, tolerance=1e-10):
     return are_close_enough(a, 1.0, tolerance)
-
-

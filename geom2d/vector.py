@@ -1,5 +1,7 @@
 import math
 
+from geom2d import nums
+
 class Vector:
     def __init__(self, u, v):
         self.u = u
@@ -10,6 +12,15 @@ class Vector:
             self.u + other.u,
             self.v + other.v
         )
+
+    def __sub__(self, other):
+        return Vector(
+            self.u - other.u, 
+            self.v - other.v
+        )
+
+    def scaled_by(self, factor):
+        return Vector(factor * self.u, factor * self.v)
 
     @property
     def norm(self):
