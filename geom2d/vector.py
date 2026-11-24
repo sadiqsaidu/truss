@@ -74,7 +74,7 @@ class Vector:
         )
 
     def perpendicular(self):
-        return Vector(-self.u, self.u)
+        return Vector(-self.v, self.u)
 
     def opposite(self):
         return Vector(-self.u, -self.v)

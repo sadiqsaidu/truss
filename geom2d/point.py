@@ -1,5 +1,6 @@
 import math
 
+from geom2d import nums
 from geom2d.vector import Vector
 
 class Point:
