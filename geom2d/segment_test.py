@@ -3,7 +3,8 @@ import unittest
 
 from geom2d import tparam
 from geom2d.point import Point
-from geom2d.segment import Segment 
+from geom2d.segment import Segment
+from geom2d.vector import Vector
 
 class TestSegment(unittest.TestCase):
 
@@ -33,6 +34,21 @@ class TestSegment(unittest.TestCase):
         expected = Point(200, 200)
         actual = self.segment.middle
         self.assertEqual(expected, actual)
+
+    def test_direction_vector(self):
+        expected = Vector(-400, 400)
+        actual = self.segment.direction_vector
+        self.assertEqual(expected, actual)
+
+    def test_distance_to_point_on_segment(self):
+        p = Point(200, 200)
+        self.assertAlmostEqual(0.0, self.segment.distance_to(p))
+
+    def test_distance_to_point_outside_segment(self):
+        p = Point(500, 20)
+        expected = self.start.distance_to(p)
+        actual = self.segment.distance_to(p)
+        self.assertAlmostEqual(expected, actual)
 
     def test_closest_point_is_start(self):
         p = Point(500, 20)

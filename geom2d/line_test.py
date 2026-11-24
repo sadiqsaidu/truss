@@ -6,6 +6,30 @@ from geom2d.vector import Vector
 
 
 class TestLine(unittest.TestCase):
+    def test_parallel_lines(self):
+        l1 = Line(Point(0, 0), Vector(1, 1))
+        l2 = Line(Point(10, 10), Vector(2, 2))
+        self.assertTrue(l1.is_parallel_to(l2))
+
+    def test_perpendicular_lines(self):
+        l1 = Line(Point(0, 0), Vector(1, 0))
+        l2 = Line(Point(0, 0), Vector(0, 1))
+        self.assertTrue(l1.is_perpendicular_to(l2))
+
+    def test_parallel_through_point(self):
+        original = Line(Point(0, 0), Vector(1, 1))
+        point = Point(5, 2)
+        actual = original.parallel_through(point)
+        self.assertEqual(point, actual.base)
+        self.assertEqual(original.direction, actual.direction)
+
+    def test_perpendicular_through_point(self):
+        original = Line(Point(0, 0), Vector(1, 0))
+        point = Point(5, 2)
+        actual = original.perpendicular_through(point)
+        self.assertEqual(point, actual.base)
+        self.assertEqual(Vector(0, 1), actual.direction)
+
     def test_parallel_lines_no_intersection(self):
         l1 = Line(Point(0, 0), Vector(1, 1))
         l2 = Line(Point(10, 10), Vector(1, 1))

@@ -1,3 +1,20 @@
 # Truss
 
-A small, dependency-free Python library for 2D geometry. It provides `Point` and `Vector` classes along with helpers for common operations such as distance, dot and cross products, projection, angles, and rotation. Floating point comparisons use a small tolerance, so equality checks are not thrown off by rounding errors.
+A small, dependency-free Python library for 2D geometry.
+
+## Features
+
+- `Point`: coordinates, displacement, and distance between points.
+- `Vector`: addition, subtraction, scaling, dot and cross products, normalization, projection, angles, and rotation.
+- `Line`: parallel and perpendicular lines, intersections, and parallel or perpendicular lines through a point.
+- `Segment`: length, midpoint, points along a segment, closest points and distances, intersections, and bisectors.
+
+Floating point comparisons use a small tolerance, so equality checks are not thrown off by rounding errors.
+
+## Running tests
+
+Run the unit tests from the repository root:
+
+```bash
+python3 -m unittest discover -s geom2d -p '*_test.py'
+```
