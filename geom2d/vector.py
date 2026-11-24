@@ -97,4 +97,4 @@ class Vector:
         return nums.are_close_enough(self.u, other.u) and nums.are_close_enough(self.v, other.v)
 
     def __str__(self):
-        return f'({self.}, {self.v} with norm {self.norm})'
+        return f'({self.u}, {self.v}) with norm {self.norm}'
