@@ -76,5 +76,5 @@ class Rect:
         if not isinstance(other, Rect):
             return False 
 
-        return self.origin == other.orgin and self.size == other.size 
+        return self.origin == other.origin and self.size == other.size
     

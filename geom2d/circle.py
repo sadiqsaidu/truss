@@ -43,5 +43,5 @@ class Circle:
         return self.center == other.center and are_close_enough(self.radius, other.radius)
 
     def __str__(self):
-        return f'circule c = {self.center}, r = {self.radius}'
+        return f'circle c = {self.center}, r = {self.radius}'
         

@@ -14,10 +14,10 @@ def make_rect_containing(points: [Point]):
         min_x, max_x = min(min_x, point.x), max(max_x, point.x)
         min_y, max_y = min(min_y, point.y), max(max_y, point.y)
 
-        return Rect(
-            Point(min_x, min_y),
-            Size(max_x - min_x, max_y - min_x)
-        )
+    return Rect(
+        Point(min_x, min_y),
+        Size(max_x - min_x, max_y - min_y)
+    )
 
 def make_rect_containing_with_margin(points: [Point], margin: float):
     rect = make_rect_containing(points)
